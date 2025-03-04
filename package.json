@@ -1,9 +1,10 @@
 {
   "name": "devtinder",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "Episode-03/src/app.js",
+    "dev": "nodemon Episode-03/src/app.js"
   },
   "keywords": [
     "nodeJs",
