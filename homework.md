@@ -13,4 +13,14 @@ Episode 05 :
 - write a dummy auth middleware for all user routes, except /user/login
 
 - error handling using a app.use("/", err, req, res, next)
-- 
+
+Episode-06 : Database, Schema  Models Mongoose
+
+- Create a free cluster on MongoDB official site
+- Install mongoose library
+- Connect your application to the Database <connectionURL>/devTinder
+- Call the connectDB function and connect to the database before starting the application on 777
+- Create a userSchema & User model
+- create a POST /signUp API tp add data to the database
+- Push some documents using API calls from postman
+- Handling error with try catch
