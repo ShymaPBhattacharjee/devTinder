@@ -18,7 +18,7 @@ app.post("/signUp", async (req, res) => {
     await user.save();
     res.send("User added successfully.");
   } catch (err) {
-    res.send(400).send("Error saving the user " + err.message);
+    res.status(400).send("Error saving the user " + err.message);
   }
 });
 
@@ -34,8 +34,8 @@ app.get("/user", async (req, res) => {
     } else {
       res.send(user);
     }
-  } catch (err) { 
-    res.send(400).send("Error to find the user " + err.message);
+  } catch (err) {
+    res.status(400).send("Error to find the user " + err.message);
   }
 });
 
@@ -49,7 +49,36 @@ app.get("/feed", async (re, res) => {
       res.send(users);
     }
   } catch (err) {
-    res.send(400).send("Error to find the user " + err.message);
+    res.status(400).send("Error to find the user " + err.message);
+  }
+});
+
+// delete a user from the database
+app.delete("/user", async (req, res) => {
+  const userId = req.body.userId;
+  console.log(userId);
+  try {
+    // const user = await user.findByIdAndDelete({_id: userId});
+    const user = await User.findByIdAndDelete(userId);
+    console.log(user);
+    res.send("User deleted successfully");
+  } catch (err) {
+    res.status(400).send("Something went wrong !!!");
+  }
+});
+
+// Update data of the user
+app.patch("/user", async (req, res) => {
+  const userId = req.body.userId;
+  const data = req.body;
+  // console.log(data); 
+  // will not update the userId because this is not in our schema. Whichever parameter has in our schema that part will only update.
+  try {
+    const user = await User.findByIdAndUpdate({_id: userId}, data);
+    // console.log(user);
+    res.send("User updated successfully");
+  } catch (err) {
+    res.status(400).send("Something went wrong !!!");
   }
 });
 

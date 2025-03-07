@@ -34,3 +34,9 @@ Episode-07 : Diving into API s :
 - API - Get a user by emailId
 - API - Feed API - GET/feed - get all the users from the database
 - API- Get a user by id 
+- Create a delete user API
+- Difference between PATCH and PUT http method
+- API - Update a user
+- Explore the Monggose Documentation for Model methods
+- What are options in a Model. findOneAndUpdate method, explore more about it.
+- API - Update the user with emailId
