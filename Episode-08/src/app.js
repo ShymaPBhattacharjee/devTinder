@@ -68,20 +68,30 @@ app.delete("/user", async (req, res) => {
 });
 
 // Update data of the user
-app.patch("/user", async (req, res) => {
-  const userId = req.body.userId;
+app.patch("/user/:userId", async (req, res) => {
+  const userId = req.params?.userId;
   const data = req.body;
-  // console.log(data); 
-  // will not update the userId because this is not in our schema. Whichever parameter has in our schema that part will only update.
+
   try {
-    const user = await User.findByIdAndUpdate({_id: userId}, data, {
-      returnDocument: after,
-      runValidators: true
+    const ALLOWED_UPDATES = ["photoUrl", "about", "gender", "age", "skills"];
+
+    const isUpdateAllowed = Object.keys(data).every((key) =>
+      ALLOWED_UPDATES.includes(key)
+    );
+    if (!isUpdateAllowed) {
+      throw new Error("Update is not allowed");
+    }
+    if(data?.skills.length > 10) {
+      throw new Error("Skills cannot be more than 10")
+    }
+
+    const user = await User.findByIdAndUpdate({ _id: userId }, data, {
+      runValidators: true,
     });
     // console.log(user);
     res.send("User updated successfully");
   } catch (err) {
-    res.status(400).send("Update failed"+ err.message);
+    res.status(400).send("Update failed " + err.message);
   }
 });
 

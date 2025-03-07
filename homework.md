@@ -47,3 +47,5 @@ Episode-07 : Diving into API s :
 - Create a custom validation function for gender
 - improve the database schema - put appropiate validations on each field
 - Add timestamps to the userSchema
+- Add API level validations on Patch request  signUp pos api
+- Data sanitization - Add API validation for each field 
