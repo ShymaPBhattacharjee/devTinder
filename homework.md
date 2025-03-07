@@ -24,3 +24,10 @@ Episode-06 : Database, Schema  Models Mongoose
 - create a POST /signUp API tp add data to the database
 - Push some documents using API calls from postman
 - Handling error with try catch
+
+Episode-07 : Diving into API s :
+
+- Difference b/ JSON and javascript objects
+- Add the express.json middleware to my app
+- Make our /signUp API dynamic to recieve data from the end user
+- 
