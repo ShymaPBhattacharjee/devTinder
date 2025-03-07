@@ -49,3 +49,5 @@ Episode-07 : Diving into API s :
 - Add timestamps to the userSchema
 - Add API level validations on Patch request  signUp pos api
 - Data sanitization - Add API validation for each field 
+-  Install validator
+- Explore validator library function for password, email, url

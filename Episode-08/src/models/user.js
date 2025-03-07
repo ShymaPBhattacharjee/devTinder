@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -15,11 +16,21 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         trim: true,
         required: true,
-        unique: true
+        unique: true,
+        validate(value) {
+            if(!validator.isEmail(value)) {
+                throw new Error("Invalid email address" + value);
+            }
+        }
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        validate(value) {
+            if(!validator.isStrongPassword(value)) {
+                throw new Error("Invalid password pattern, kindly give strong password");
+            }
+        }
     },
     age: {
         type: Number,
@@ -36,7 +47,12 @@ const userSchema = new mongoose.Schema({
     },
     photoUrl: {
         type: String,
-
+        default: "https://greenacresportsmed.com.au/wp-content/uploads/2018/01/dummy-image.jpg",
+        validate(value) {
+            if(!validator.isURL(value)) {
+                throw new Error("Invalid photo url" + value);
+            }
+        }
     },
     about: {
         type: String,
@@ -45,7 +61,7 @@ const userSchema = new mongoose.Schema({
     skills: {
         type: [String],
     }
-}, {
+}, { 
     timestamps: true
 });
 
