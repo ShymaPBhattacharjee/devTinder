@@ -30,4 +30,7 @@ Episode-07 : Diving into API s :
 - Difference b/ JSON and javascript objects
 - Add the express.json middleware to my app
 - Make our /signUp API dynamic to recieve data from the end user
-- 
+- User.findOne with duplicate email Ids, which object will return.
+- API - Get a user by emailId
+- API - Feed API - GET/feed - get all the users from the database
+- API- Get a user by id 

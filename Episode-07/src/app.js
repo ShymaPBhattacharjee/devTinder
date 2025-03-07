@@ -8,8 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.post("/signUp", async (req, res) => {
-
-  // console.log(req.body); 
+  // console.log(req.body);
   // will print undefined because the data is sent JSON data. So, Server is not able to read that data.
   // To convert it in Js, e need a middleware. That middleware is given by express server i.e express.json()
 
@@ -18,10 +17,40 @@ app.post("/signUp", async (req, res) => {
   try {
     await user.save();
     res.send("User added successfully.");
-  } catch(err) {
-    res.send(400).send("Error saving the user "+ err.message);
+  } catch (err) {
+    res.send(400).send("Error saving the user " + err.message);
   }
-  
+});
+
+// Get a user by ID from the database
+app.get("/user", async (req, res) => {
+  const userEmail = req.body.email;
+
+  try {
+    // const user = await User.find({ emailId: userEmail });
+    const user = await User.findOne({ emailId: userEmail });
+    if (user.length === 0) {
+      res.status(404).send("User not found");
+    } else {
+      res.send(user);
+    }
+  } catch (err) { 
+    res.send(400).send("Error to find the user " + err.message);
+  }
+});
+
+// Feed API - GET /feed - get all the users from the database
+app.get("/feed", async (re, res) => {
+  try {
+    const users = await User.find({});
+    if (users.length === 0) {
+      res.status(404).send("User not found");
+    } else {
+      res.send(users);
+    }
+  } catch (err) {
+    res.send(400).send("Error to find the user " + err.message);
+  }
 });
 
 connectDB()
