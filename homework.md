@@ -40,3 +40,10 @@ Episode-07 : Diving into API s :
 - Explore the Monggose Documentation for Model methods
 - What are options in a Model. findOneAndUpdate method, explore more about it.
 - API - Update the user with emailId
+
+- Explore schemaType options from documentation
+- add require, minLength, maxLength, min, max, trim
+- Add default
+- Create a custom validation function for gender
+- improve the database schema - put appropiate validations on each field
+- Add timestamps to the userSchema
