@@ -51,3 +51,10 @@ Episode-07 : Diving into API s :
 - Data sanitization - Add API validation for each field 
 -  Install validator
 - Explore validator library function for password, email, url
+- NEVER TRUST req.body
+
+- validate data in signUp API
+- Install bcrypt package
+- Create passwordHash using bcrypt.hash & save the user encrypted password
+- Create login API
+- Compare passwords and throw new errors if emailId or password is invalid
