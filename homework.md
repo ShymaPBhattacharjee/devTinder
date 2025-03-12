@@ -58,3 +58,14 @@ Episode-07 : Diving into API s :
 - Create passwordHash using bcrypt.hash & save the user encrypted password
 - Create login API
 - Compare passwords and throw new errors if emailId or password is invalid
+- install cookie-parser
+- just send a dummy cookie to user
+- create GET /profile API and check if we get the cookie back
+- install jsonwebtoken
+- In login API, after email and password validation, create a JWT token and send it to user in cookies
+- Read the cookies inside your profile API and find the loggedInUser
+- userAuth middleware
+- Add the userAuth middleware in profile API and a new sendConnectionRequest API
+- create userSchema method to gewtJWT();
+- create userSchema method to comparePassword(passwordInputByUser);
+ 
