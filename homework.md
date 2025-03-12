@@ -69,3 +69,11 @@ Episode-07 : Diving into API s :
 - create userSchema method to gewtJWT();
 - create userSchema method to comparePassword(passwordInputByUser);
  
+- Explore tinder API
+- Create a list of all apis we can think of APIs
+- Group multiple routes under respective routers
+- Read documentation for express.Router
+- Create routes folder for managing auth, profile, request routers
+- Create authRouter, profileRouter, rerequestRouter
+- Import these routers in app.js
+- 
