@@ -80,3 +80,15 @@ Episode-07 : Diving into API s :
 - Create PATCH /profile/edit
 - - Create PATCH /profile/password API => forgot password API
 - Make you validate all data in every POST, PATCH apis
+
+- Create connection request schema
+- Send connection request API
+- Proper validation of data
+- Think about ALL corner cases
+- Read about $and, $or query : https://www.mongodb.com/docs/manual/reference/operator/query-logical/
+- Schema.pre("save") function
+- Read more about indexes in MongoDB
+- Why do we need index in DB?
+- what is advantage and disadvantage of creating indexes.
+- Read this article about compound indexes: https://www.mongodb.com/docs/manual/core/indexes/index-types/index-compound/
+- 
