@@ -8,7 +8,7 @@
 ### ProfileRouter 
     - GET /profile/view
     - GET /profile/edit
-    - GET /profile/password
+    - GET /profile/password // Forgot password API
 
 ### ConnectionRequestRouter 
     - POST /request/send/interested/:userId
