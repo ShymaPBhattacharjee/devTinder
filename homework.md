@@ -91,4 +91,8 @@ Episode-07 : Diving into API s :
 - Why do we need index in DB?
 - what is advantage and disadvantage of creating indexes.
 - Read this article about compound indexes: https://www.mongodb.com/docs/manual/core/indexes/index-types/index-compound/
-- 
+
+- Write code with proper validations for POST /request/review/:status/:requestId
+- Thought process of POST vs GET
+- Read about ref and populate in MongoDB https://mongoosejs.com/docs/populate.html
+- Create GET API for user/requests/recieved with all the checks
